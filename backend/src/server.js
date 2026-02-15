@@ -14,7 +14,7 @@ import cors from "cors";
 app.use(
   cors({
     origin:
-      process.env.NODE_ENV === "PRODUCTION"
+      process.env.NODE_ENV === PRODUCTION
         ? "https://aggroso-meeting-action-tracker.vercel.app"
         : "*",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
