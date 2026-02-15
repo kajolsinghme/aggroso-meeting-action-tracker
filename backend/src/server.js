@@ -15,6 +15,7 @@ app.use(
       process.env.NODE_ENV == PRODUCTION
         ? `https://aggroso-meeting-action-tracker.vercel.app`
         : "*",
+        allowedHeaders:['HEAD','GET', 'PUT', 'POST', 'DELETE', 'PATCH']
   }),
 );
 
