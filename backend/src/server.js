@@ -2,12 +2,22 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
-import mainRoutes from "./routes/index.js"
+import mainRoutes from "./routes/index.js";
+import { PRODUCTION } from "./constants/common.js";
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+app.use(
+  cors({
+    origin:
+      process.env.NODE_ENV == PRODUCTION
+        ? `https://aggroso-meeting-action-tracker.vercel.app`
+        : "*",
+  }),
+);
+
 app.use(express.json());
 
 app.use("/api/v1", mainRoutes);
