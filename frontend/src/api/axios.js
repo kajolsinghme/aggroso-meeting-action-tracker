@@ -1,6 +1,5 @@
-import axios from 'axios'
+import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "http://localhost:4000/api/v1"
-})
-
+  baseURL: `${process.env.REACT_APP_BASE_URL ?? `http://localhost:4000`}/api/v1`,
+});
