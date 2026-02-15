@@ -1,14 +1,25 @@
-import React from "react";
 import { Clock } from "lucide-react";
+import { useEffect, useState } from "react";
+import { fetchRecentTranscripts } from "../api/transcript.js";
 
 const RecentTranscripts = () => {
-  const transcriptHistory = [
-    { id: 1, title: "Strategy Sync: Global Expansion", time: "3h ago" },
-    { id: 2, title: "Internal Workshop: Security Protocols", time: "Oct 15" },
-    { id: 3, title: "Marketing Planning Session", time: "Oct 12" },
-    { id: 4, title: "Product Launch Review", time: "Oct 10" },
-    { id: 5, title: "Quarterly Team Retrospective", time: "Oct 8" },
-  ];
+  const [transcriptHistory, setTranscriptHistory] = useState([]);
+
+ useEffect(() => {
+  const fetchTranscriptHistory = async () => {
+    try {
+      const res = await fetchRecentTranscripts();
+      console.log("dhuihaiusjaio",res)
+      setTranscriptHistory(res.data.data || []);
+    } catch (error) {
+      console.error("Failed to fetch recent transcripts", error);
+      alert("Failed to fetch recent transcripts");
+    }
+  };
+
+  fetchTranscriptHistory(); 
+}, []); 
+
 
   return (
     <div className="max-w-3xl mx-auto py-10 flex flex-col gap-6">
@@ -19,19 +30,16 @@ const RecentTranscripts = () => {
       <div className="grid grid-cols-2 gap-4">
         {transcriptHistory.map((t) => (
           <div
-            key={t.id}
+            key={t._id}
             className="bg-white shadow-md p-4 rounded-xl border border-gray-200 cursor-pointer"
           >
             <div className="flex justify-between items-center mb-2">
               <div className="flex items-center gap-2 text-[#082567] font-bold">
                 <Clock size={18} />
-                <span className="text-sm">{t.time}</span>
+                <span className="text-sm">{t.createdAt.slice(0, 10)}</span>
               </div>
-              
             </div>
-
-            {/* Title */}
-            <h2 className="font-semibold text-lg">{t.title}</h2>
+            <h2 className="font-semibold text-lg">{t.text}</h2>
           </div>
         ))}
       </div>

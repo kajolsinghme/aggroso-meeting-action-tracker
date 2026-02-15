@@ -10,6 +10,7 @@ import {
 export const extractFromTranscript = async (req, res) => {
   try {
     const { transcript } = req.body;
+    console.log("transpict received",transcript)
 
     if (!transcript) {
       return res
@@ -25,7 +26,7 @@ export const extractFromTranscript = async (req, res) => {
       data: result,
     });
   } catch (err) {
-    console.error(err);
+    console.log(err);
     res
       .status(500)
       .json({ success: false, message: "Failed to extract action item" });

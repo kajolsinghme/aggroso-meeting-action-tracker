@@ -1,17 +1,15 @@
-import TranscriptInput from '../components/TranscriptInput'
-import Header from '../components/Header'
-import ActionItemList from '../components/ActionItemList'
-import RecentTranscripts from '../components/RecentTranscripts'
+import TranscriptPage from "../components/TranscriptPage";
+import Header from "../components/Header";
+import RecentTranscripts from "../components/RecentTranscripts";
 
 const Home = () => {
   return (
     <>
-    <Header/>
-    <TranscriptInput/>
-    <ActionItemList/>
-    <RecentTranscripts/>
+      <Header />
+      <TranscriptPage />
+      <RecentTranscripts />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
