@@ -19,14 +19,19 @@ Make sure to use the meeting date as reference.
 **2. Sample Transcript**
 ```
 
-Liam: I will finalize the security audit by next Tuesday.
-Emma: Prepare the client presentation by Wednesday.
-Noah: Update project documentation by Friday.
+Meeting: Marketing Sync
+Date: 20-Feb-2026
+
+Ronie: We need the campaign banner ready by next Monday.
+Alice: I’ll design the banner.
+Emma: I’ll prepare the social media captions by tomorrow.
+Noah: I’ll review everything before publishing.
+
 
 ```
 
 **3. Output**
-- Task: Finalize security audit | Owner: Liam | Due: next Tuesday
-- Task: Prepare the client presentation | Owner: Emma | Due: Wednesday
-- Task: Update project documentation | Owner: Noah | Due: Friday
+- Task: Prepare the campaign banner | Owner: Alice | Due: 2026-02-23
+- Task: Prepare social media captions | Owner: Emma | Due: 2026-02-21
+- Task: Review all marketing materials | Owner: Noah | Due: Not specified
 ```
