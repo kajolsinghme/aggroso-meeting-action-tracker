@@ -15,8 +15,7 @@ A web app to extract action items from meeting transcripts and manage them.
 
 ## Live 
 
-- **Live App:** [https://aggroso-meeting-action-tracker.vercel.app](https://aggroso-meeting-action-tracker.vercel.app)  
-
+- **Live App:** [https://aggroso-meeting-action-tracker.vercel.app]
 
 ## Setup
 
@@ -37,7 +36,7 @@ npm install
 ```
 PORT=4000
 MONGO_URI=<your-mongodb-uri>
-GENAI=<your-gemini-api-key>
+GENAI_API_KEY=<your-gemini-api-key>
 ```
 
 3. Start servers:
