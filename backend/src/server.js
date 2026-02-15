@@ -9,13 +9,22 @@ dotenv.config();
 
 const app = express();
 
+import cors from "cors";
+
 app.use(
   cors({
     origin:
-      process.env.NODE_ENV == PRODUCTION
-        ? `https://aggroso-meeting-action-tracker.vercel.app`
+      process.env.NODE_ENV === "PRODUCTION"
+        ? "https://aggroso-meeting-action-tracker.vercel.app"
         : "*",
-        allowedHeaders:['HEAD','GET', 'PUT', 'POST', 'DELETE', 'PATCH']
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Origin",
+      "Accept",
+      "X-Requested-With",
+    ],
   }),
 );
 
