@@ -4,13 +4,13 @@ import {
   getAllActionItemsService,
   getActionItemByIdService,
   updateActionItemService,
-  deleteActionItemService
+  deleteActionItemService,
 } from "../services/actionItemService.js";
 
 export const extractFromTranscript = async (req, res) => {
   try {
     const { transcript } = req.body;
-    console.log("transpict received",transcript)
+    console.log("transpict received", transcript);
 
     if (!transcript) {
       return res
@@ -82,7 +82,9 @@ export const getActionItemById = async (req, res) => {
 
     res.json({ success: true, data: item });
   } catch (error) {
-    res.status(500).json({ success: false, message: "Something went wrong" });
+    res
+      .status(500)
+      .json({ success: false, message: "Failed to fetch action item" });
   }
 };
 
